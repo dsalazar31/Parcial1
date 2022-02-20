@@ -10,7 +10,10 @@ class parcial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "Primer parcia", home: principal());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Primer parcia",
+        home: principal());
   }
 }
 
@@ -25,12 +28,17 @@ class _principalState extends State<principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Parcial 1"),
-        ),
-        body: Container(
-          height: 100,
-          child: Image.network("https://fondosmil.com/fondo/17010.jpg"),
-        ));
+      appBar: AppBar(
+        title: Text("Parcial 1"),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    "https://us.123rf.com/450wm/plasticperson/plasticperson1905/plasticperson190504269/122498608-fondo-de-humo-de-color-blanco-abstracto-aislado-sobre-fondo-de-color-azul-la-pared-de-niebla-blanca-.jpg?ver=6"),
+                fit: BoxFit.cover)),
+        child: Formulario(),
+      ),
+    );
   }
 }
